@@ -1,0 +1,15 @@
+[licenses]
+allow = [
+    "Apache-2.0",
+    "BSD-3-Clause",
+    "MIT",
+    "Unicode-DFS-2016",
+]
+
+unlicensed = "deny"
+copyleft = "deny"
+default = "deny"
+
+[bans]
+wildcards = "deny"
+multiple-versions = "allow"

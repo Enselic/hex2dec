@@ -1,0 +1,15 @@
+[package]
+edition = "2021"
+name = "hex2dec"
+version = "0.0.1"
+description = "Transform args and stdin hex numbers to decimal notation in place."
+homepage = "https://github.com/Enselic/hex2dec"
+documentation = "https://docs.rs/hex2dec"
+readme = "README.md"
+categories = ["command-line-utilities" ]
+license = "MIT"
+repository = "https://github.com/Enselic/hex2dec"
+
+[dependencies]
+once_cell = "1.19.0"
+regex = "1.10.3"
