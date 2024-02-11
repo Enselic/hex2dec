@@ -1,7 +1,7 @@
 [package]
 edition = "2021"
 name = "hex2dec"
-version = "0.0.1"
+version = "0.0.2"
 description = "Transform args and stdin hex numbers to decimal notation in place."
 homepage = "https://github.com/Enselic/hex2dec"
 documentation = "https://docs.rs/hex2dec"
