@@ -13,7 +13,7 @@ dependencies = [
 
 [[package]]
 name = "hex2dec"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "once_cell",
  "regex",
