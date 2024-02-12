@@ -4,6 +4,7 @@ use std::{
     borrow::Cow,
     io::{self, BufRead, ErrorKind::InvalidInput},
     num::ParseIntError,
+    process,
 };
 
 static REGEX: Lazy<Regex> = Lazy::new(|| regex::Regex::new(r"\b(0x)?([0-9a-fA-F]{2,})\b").unwrap());
@@ -97,16 +98,17 @@ pub fn parse_ci<E: Fn(ParseIntError) -> io::Error, F: Fn(String)>(
         break_nl,
     ) {
         match e.kind() {
-            InvalidInput => eprint!("An error occured in hex2dec_line. {}", e),
-            _ => eprint!("An error occured in parse_stdin. {}", e),
+            InvalidInput => eprint!("Error in hex2dec_line. {}", e),
+            _ => eprint!("Error in parse_stdin. {}", e),
         }
+        process::exit(1)
     }
 }
 
 /// Convert values within a string from hex to decimal notation.
 /// # Errors
 /// This function errors when the program fails to parse any hex value contained
-/// within the supplied string. If skip_error is set to `true` then parsing errors will
+/// within the supplied string. If `skip_error` is set to `true` then parsing errors will
 /// be ignored and the matched substring will remain in place.
 /// # Examples
 /// ```rust
